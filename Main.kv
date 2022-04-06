@@ -1,0 +1,64 @@
+Testing:
+    canvas.before:
+        Color:
+            rgb: (82/255, 94/255, 177/255)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<Testing>:
+    orientation: "vertical"
+    padding: 40
+    spacing: 10
+
+    TextInput:
+        size_hint: 1, 0.10
+        foreground_color: root.red, root.green, root.blue
+        font_size: root.font
+        padding: 0, 50
+        halign: "center"
+        text: "Type Something"
+
+    Slider:
+        cursor_image: "pngwing.com.png"
+        size_hint: 1, 0.10
+        value: 0
+        min: 0
+        max: 1
+        on_value: root.change_red(*args)
+
+    Label:
+        size_hint: 1, 0.01
+        text: f"Red value = {round(root.red,2)}"
+
+    Slider:
+        cursor_image: "green.png"
+        size_hint: 1, 0.10
+        min: 0
+        max: 1
+        on_value: root.change_green(*args)
+
+    Label:
+        size_hint: 1, 0.01
+        text: f"Green value = {round(root.green,2)}"
+
+    Slider:
+        cursor_image: "blue.png"
+        size_hint: 1, 0.10
+        min: 0
+        max: 1
+        on_value: root.change_blue(*args)
+
+    Label:
+        size_hint: 1, 0.01
+        text: f"Blue value = {round(root.blue,2)}"
+
+    Slider:
+        size_hint: 1, 0.10
+        min:0
+        max:100
+        on_value: root.font_size(*args)
+
+    Label:
+        size_hint: 1, 0.01
+        text: f"Font size value = {round(root.font,2)}"
